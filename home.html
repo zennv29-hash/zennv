@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CineStream Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar Utama -->
+    <nav class="main-nav">
+        <div class="nav-left-side">
+            <div class="brand-logo">CineStream</div>
+            <ul class="nav-links">
+                <li class="active">Beranda</li>
+                <li>Film</li>
+                <li>Serial TV</li>
+                <li>Terbaru</li>
+            </ul>
+        </div>
+        
+        <!-- Menu Profil Pengguna -->
+        <div class="nav-right-side">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <i class="fa-solid fa-bell notification-icon"></i>
+            <div class="profile-dropdown-wrapper">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar" class="avatar-click" onclick="toggleProfileMenu()">
+                
+                <!-- Kotak Detail Profil (Diatur lewat CSS) -->
+                <div class="profile-menu-card" id="profileMenu">
+                    <div class="user-profile-header">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar">
+                        <div>
+                            <h4>Alex Sander</h4>
+                            <p>Premium Member</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <a href="#"><i class="fa-solid fa-user"></i> Akun Saya</a>
+                    <a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+                    <a href="#"><i class="fa-solid fa-circle-question"></i> Bantuan</a>
+                    <hr>
+                    <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Utama (Jumbotron Film Terpopuler) -->
+    <div class="hero-banner" style="background-image: linear-gradient(to top, #0f0f0f, rgba(15,15,15,0.1)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200');">
+        <div class="hero-content">
+            <span class="movie-badge">Trending Hari Ini</span>
+            <h1 class="hero-title">PETUALANGAN LUAR ANGKASA: REVOLUSI</h1>
+            <p class="hero-synopsis">Sekelompok astronot menemukan gerbang dimensi baru di ujung tata surya yang mengancam keberadaan bumi. Sanggupkah mereka kembali sebelum segalanya terlambat?</p>
+            <div class="hero-buttons">
+                <button class="btn-play"><i class="fa-solid fa-play"></i> Putar</button>
+                <button class="btn-info"><i class="fa-solid fa-circle-info"></i> Info Lanjut</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konten Galeri Banyak Pilihan Film -->
+    <div class="movie-gallery-container">
+        
+        <!-- Kategori 1 -->
+        <div class="movie-section">
+            <h2 class="section-title">Film Aksi Terpopuler</h2>
+            <div class="movie-grid">
+                <!-- Film 1 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Cyber War 2044</h4><p>Aksi • 2j 15m</p></div>
+                </div>
+                <!-- Film 2 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>The Last Samurai</h4><p>Sejarah • 1j 50m</p></div>
+                </div>
+                <!-- Film 3 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Fantasy Realm</h4><p>Petualangan • 2j 05m</p></div>
+                </div>
+                <!-- Film 4 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Speed Chaser</h4><p>Balapan • 1j 45m</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kategori 2 -->
+        <div class="movie-section">
+            <h2 class="section-title">Rekomendasi Horor & Misteri</h2>
+            <div class="movie-grid">
+                <!-- Film 5 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1505635552518-3448ff116af3?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Rumah Kosong</h4><p>Horor • 1j 32m</p></div>
+                </div>
+                <!-- Film 6 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Deep Ocean Myst</h4><p>Misteri • 2j 10m</p></div>
+                </div>
+                <!-- Film 7 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Kutukan Kuno</h4><p>Thriller • 1j 58m</p></div>
+                </div>
+                <!-- Film 8 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>The Silent City</h4><p>Sci-Fi • 2j 22m</p></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Fungsi menyalakan & mematikan dropdown menu profil pengguna
+        function toggleProfileMenu() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('show-menu');
+        }
+
+        // Menutup menu jika user mengklik area lain di luar foto profil
+        window.onclick = function(event) {
+            if (!event.target.matches('.avatar-click')) {
+                const dropdowns = document.getElementsByClassName("profile-menu-card");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

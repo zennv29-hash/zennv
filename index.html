@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masuk / Daftar - NetFlix Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-wrapper">
+        <div class="logo-center">CineStream</div>
+        
+        <div class="auth-box">
+            <h2 id="authTitle">Masuk</h2>
+            <form action="home.html" method="GET">
+                <div class="input-field" id="emailField" style="display: none;">
+                    <input type="email" placeholder="Alamat Email">
+                </div>
+                <div class="input-field">
+                    <input type="text" placeholder="Username" required>
+                </div>
+                <div class="input-field">
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary" id="btnSubmit">Masuk</button>
+            </form>
+            
+            <div class="auth-switch">
+                <span id="switchText">Belum punya akun?</span> 
+                <a href="#" id="switchLink" onclick="toggleAuth()">Daftar Sekarang</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mengubah tampilan Login menjadi Daftar tanpa pindah file
+        function toggleAuth() {
+            const title = document.getElementById('authTitle');
+            const emailField = document.getElementById('emailField');
+            const btnSubmit = document.getElementById('btnSubmit');
+            const switchText = document.getElementById('switchText');
+            const switchLink = document.getElementById('switchLink');
+
+            if (title.innerText === "Masuk") {
+                title.innerText = "Daftar Akun";
+                emailField.style.display = "block";
+                btnSubmit.innerText = "Buat Akun";
+                switchText.innerText = "Sudah punya akun?";
+                switchLink.innerText = "Masuk di sini";
+            } else {
+                title.innerText = "Masuk";
+                emailField.style.display = "none";
+                btnSubmit.innerText = "Masuk";
+                switchText.innerText = "Belum punya akun?";
+                switchLink.innerText = "Daftar Sekarang";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* --- RESET GLOBAL --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #0f0f0f; /* Hitam pekat modern */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- TAMPILAN INDEX.HTML (LOGIN / DAFTAR) --- */
+.login-wrapper {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)), 
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1200');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-center {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e50914;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.auth-box {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px 50px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.auth-box h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.input-field {
+    margin-bottom: 18px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 14px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input-field input:focus {
+    background: #454545;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #e50914;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #b80710;
+}
+
+.auth-switch {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #737373;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+/* --- TAMPILAN HOME.HTML (MENU UTAMA) --- */
+.main-nav {
+    height: 68px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    transition: background 0.3s;
+}
+
+.brand-logo {
+    color: #e50914;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-left-side {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.nav-links li {
+    cursor: pointer;
+    color: #e5e5e5;
+    transition: 0.2s;
+}
+
+.nav-links li:hover, .nav-links li.active {
+    color: #fff;
+    font-weight: 500;
+}
+
+.nav-right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-right-side i {
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* --- DRAG MENU PROFIL PENGGUNA --- */
+.profile-dropdown-wrapper {
+    position: relative;
+}
+
+.avatar-click {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile-menu-card {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    border: 1px solid #333;
+    width: 240px;
+    border-radius: 6px;
+    padding: 15px 0;
+    display: none; /* Sembunyi sebelum diklik */
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.profile-menu-card.show-menu {
+    display: flex; /* Ditrigger lewat JS */
+}
+
+.user-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 15px 10px 15px;
+}
+
+.user-profile-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile-header h4 {
+    font-size: 0.95rem;
+}
+
+.user-profile-header p {
+    font-size: 0.75rem;
+    color: #e50914;
+}
+
+.profile-menu-card hr {
+    border: 0;
+    border-top: 1px solid #333;
+    margin: 8px 0;
+}
+
+.profile-menu-card a {
+    color: #e5e5e5;
+    text-decoration: none;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-menu-card a:hover {
+    background: #e50914;
+    color: white;
+}
+
+.profile-menu-card .logout-link:hover {
+    background: #b80710;
+}
+
+/* --- HERO JUMBOTRON BANNER --- */
+.hero-banner {
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+.movie-badge {
+    background: #e50914;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 15px 0;
+    line-height: 1.1;
+}
+
+.hero-synopsis {
+    font-size: 1rem;
+    color: #cacaca;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-play, .btn-info {
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+}
+
+.btn-play { background: white; color: black; }
+.btn-play:hover { background: rgba(255,255,255,0.75); }
+
+.btn-info { background: rgba(109, 109, 110, 0.7); color: white; }
+.btn-info:hover { background: rgba(109, 109, 110, 0.4); }
+
+/* --- GRID PILIHAN FILM --- */
+.movie-gallery-container {
+    padding: 0 4% 50px 4%;
+    position: relative;
+    z-index: 10;
+    margin-top: -60px; /* Menumpuk sedikit ke atas banner */
+}
+
+.movie-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.movie-card {
+    position: relative;
+    aspect-ratio: 2/3;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #222;
+    transition: transform 0.3s ease;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+.movie-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card-overlay h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.card-overlay p { font-size: 0.75rem; color: #aaa; }
+
+/* --- LAYAR RESPONSIF GADGET / HP --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Sembunyikan link teks di HP */
+    .hero-title { font-size: 2rem; }
+    .movie-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}

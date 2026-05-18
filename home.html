@@ -1,271 +1,156 @@
-<!-- ========================= -->
-<!-- FILE : home.html -->
-<!-- DEV ZENNV 😈🔥 -->
-<!-- ========================= -->
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ZENNV MOVIE</title>
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:sans-serif;
-}
-
-body{
-background:#050505;
-color:white;
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:15px;
-background:#0d0d0d;
-display:flex;
-justify-content:space-between;
-align-items:center;
-z-index:999;
-box-shadow:0 0 15px #00ffcc55;
-}
-
-.logo{
-font-size:28px;
-font-weight:bold;
-color:#00ffcc;
-}
-
-.dev{
-font-size:13px;
-color:#aaa;
-}
-
-/* BANNER */
-
-.banner{
-margin-top:80px;
-position:relative;
-width:100%;
-height:650px;
-overflow:hidden;
-}
-
-.banner img{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:brightness(45%);
-}
-
-.banner-content{
-position:absolute;
-bottom:40px;
-left:20px;
-}
-
-.tag{
-background:red;
-display:inline-block;
-padding:8px 15px;
-border-radius:10px;
-font-size:14px;
-margin-bottom:15px;
-}
-
-.banner-content h1{
-font-size:45px;
-margin-bottom:15px;
-}
-
-.banner-content p{
-font-size:17px;
-line-height:1.5;
-color:#ddd;
-margin-bottom:20px;
-max-width:90%;
-}
-
-.watch-btn{
-display:inline-block;
-padding:15px 25px;
-background:#00ffcc;
-color:black;
-font-weight:bold;
-border-radius:15px;
-text-decoration:none;
-font-size:18px;
-transition:0.3s;
-}
-
-.watch-btn:hover{
-background:white;
-transform:scale(1.05);
-}
-
-/* MOVIE SECTION */
-
-.section{
-padding:25px;
-}
-
-.section h2{
-font-size:32px;
-margin-bottom:20px;
-color:#00ffcc;
-}
-
-.movie-card{
-background:#111;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 0 20px rgba(0,255,200,0.2);
-}
-
-.movie-card img{
-width:100%;
-height:550px;
-object-fit:cover;
-}
-
-.movie-info{
-padding:20px;
-}
-
-.movie-info h3{
-font-size:35px;
-margin-bottom:15px;
-color:#00ffcc;
-}
-
-.movie-info p{
-line-height:1.7;
-font-size:17px;
-color:#ccc;
-margin-bottom:20px;
-}
-
-.play-btn{
-display:block;
-width:100%;
-text-align:center;
-padding:18px;
-background:#00ffcc;
-border-radius:15px;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-color:black;
-transition:0.3s;
-}
-
-.play-btn:hover{
-background:white;
-transform:scale(1.03);
-}
-
-/* FOOTER */
-
-footer{
-text-align:center;
-padding:30px;
-color:#777;
-font-size:14px;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - CineStream Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<!-- HEADER -->
+    <!-- Navbar Utama -->
+    <nav class="main-nav">
+        <div class="nav-left-side">
+            <div class="brand-logo">CineStream</div>
+            <ul class="nav-links">
+                <li class="active">Beranda</li>
+                <li>Film</li>
+                <li>Serial TV</li>
+                <li>Terbaru</li>
+            </ul>
+        </div>
+        
+        <!-- Menu Profil Pengguna -->
+        <div class="nav-right-side">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <i class="fa-solid fa-bell notification-icon"></i>
+            <div class="profile-dropdown-wrapper">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar" class="avatar-click" onclick="toggleProfileMenu()">
+                
+                <!-- Kotak Detail Profil (Diatur lewat CSS) -->
+                <div class="profile-menu-card" id="profileMenu">
+                    <div class="user-profile-header">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150" alt="Avatar">
+                        <div>
+                            <h4>Alex Sander</h4>
+                            <p>Premium Member</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <a href="#"><i class="fa-solid fa-user"></i> Akun Saya</a>
+                    <a href="#"><i class="fa-solid fa-gear"></i> Pengaturan</a>
+                    <a href="#"><i class="fa-solid fa-circle-question"></i> Bantuan</a>
+                    <hr>
+                    <a href="index.html" class="logout-link"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-<header>
+    <!-- Banner Utama (Jumbotron Film Terpopuler) -->
+    <div class="hero-banner" style="background-image: linear-gradient(to top, #0f0f0f, rgba(15,15,15,0.1)), url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=1200');">
+        <div class="hero-content">
+            <span class="movie-badge">Trending Hari Ini</span>
+            <h1 class="hero-title">PETUALANGAN LUAR ANGKASA: REVOLUSI</h1>
+            <p class="hero-synopsis">Sekelompok astronot menemukan gerbang dimensi baru di ujung tata surya yang mengancam keberadaan bumi. Sanggupkah mereka kembali sebelum segalanya terlambat?</p>
+            <div class="hero-buttons">
+                <button class="btn-play"><i class="fa-solid fa-play"></i> Putar</button>
+                <button class="btn-info"><i class="fa-solid fa-circle-info"></i> Info Lanjut</button>
+            </div>
+        </div>
+    </div>
 
-<div>
-<div class="logo">ZENNV MOVIE</div>
-<div class="dev">DEV ZENNV 😈🔥</div>
-</div>
+    <!-- Konten Galeri Banyak Pilihan Film -->
+    <div class="movie-gallery-container">
+        
+        <!-- Kategori 1 -->
+        <div class="movie-section">
+            <h2 class="section-title">Film Aksi Terpopuler</h2>
+            <div class="movie-grid">
+                <!-- Film 1 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Cyber War 2044</h4><p>Aksi • 2j 15m</p></div>
+                </div>
+                <!-- Film 2 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>The Last Samurai</h4><p>Sejarah • 1j 50m</p></div>
+                </div>
+                <!-- Film 3 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Fantasy Realm</h4><p>Petualangan • 2j 05m</p></div>
+                </div>
+                <!-- Film 4 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1568832359672-e36cf5d74f54?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Speed Chaser</h4><p>Balapan • 1j 45m</p></div>
+                </div>
+                
+                <!-- Film 5 (Film Baru dari Anda) -->
+                <a href="https://h5.d9s3x4.com/share/invite/share_page.html?invited_by=212595958&vod_id=545426&vod_from_id=0&arg=bW92aWVpZCxpZCxodHRwczovL2FwcC5yMmM3YTAuY29tL3ZlcnNpb24vbW92aWVpZC9tb3ZpZWlkX3NoXzEwMDAtVjMuMC4zLmFwayxub25l" target="_blank" style="text-decoration: none; color: inherit;">
+                    <div class="movie-card">
+                        <img src="https://cdn.phototourl.com/free/2026-05-18-ccda07a4-fa61-4799-a377-a91bb5224bf9.jpg" alt="Poster Film Pilihan">
+                        <div class="card-overlay">
+                            <h4>Film Pilihan Anda</h4>
+                            <p>Rekomendasi • Klik untuk Nonton</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
 
-</header>
+        <!-- Kategori 2 -->
+        <div class="movie-section">
+            <h2 class="section-title">Rekomendasi Horor & Misteri</h2>
+            <div class="movie-grid">
+                <!-- Film 6 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1505635552518-3448ff116af3?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Rumah Kosong</h4><p>Horor • 1j 32m</p></div>
+                </div>
+                <!-- Film 7 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Deep Ocean Myst</h4><p>Misteri • 2j 10m</p></div>
+                </div>
+                <!-- Film 8 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>Kutukan Kuno</h4><p>Thriller • 1j 58m</p></div>
+                </div>
+                <!-- Film 9 -->
+                <div class="movie-card">
+                    <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?w=400" alt="Poster Film">
+                    <div class="card-overlay"><h4>The Silent City</h4><p>Sci-Fi • 2j 22m</p></div>
+                </div>
+            </div>
+        </div>
 
-<!-- BANNER -->
+    </div>
 
-<section class="banner">
+    <script>
+        // Fungsi menyalakan & mematikan dropdown menu profil pengguna
+        function toggleProfileMenu() {
+            const menu = document.getElementById('profileMenu');
+            menu.classList.toggle('show-menu');
+        }
 
-<img src="https://i.imgur.com/9Xnt6wL.jpeg">
-
-<div class="banner-content">
-
-<div class="tag">TRENDING HARI INI</div>
-
-<h1>SHELTER</h1>
-
-<p>
-Film action survival brutal penuh aksi menegangkan.
-Seorang pria misterius berusaha melindungi seorang gadis
-dari ancaman mematikan di tengah dunia kacau.
-</p>
-
-<a class="watch-btn"
-href="https://h5.d9s3x4.com/share/invite/share_page.html?invited_by=212595958&vod_id=545426&vod_from_id=0&arg=bW92aWVpZCxodHRwczovL2FwcC5yMmM3YTAuY29tL3ZlcnNpb24vbW92aWVpZC9tb3ZpZWlkX3NoXzEwMDAtVjMuMC4zLmFwayxub25l"
-target="_blank">
-
-▶ TONTON SEKARANG
-
-</a>
-
-</div>
-
-</section>
-
-<!-- MOVIE LIST -->
-
-<section class="section">
-
-<h2>FILM POPULER</h2>
-
-<div class="movie-card">
-
-<img src="https://i.imgur.com/9Xnt6wL.jpeg">
-
-<div class="movie-info">
-
-<h3>SHELTER</h3>
-
-<p>
-Film survival-action yang menghadirkan ketegangan nonstop,
-adegan brutal, dan perjuangan hidup di tengah ancaman besar.
-Cocok buat pecinta film action dark dan menegangkan.
-</p>
-
-<a class="play-btn"
-href="https://h5.d9s3x4.com/share/invite/share_page.html?invited_by=212595958&vod_id=545426&vod_from_id=0&arg=bW92aWVpZCxodHRwczovL2FwcC5yMmM3YTAuY29tL3ZlcnNpb24vbW92aWVpZC9tb3ZpZWlkX3NoXzEwMDAtVjMuMC4zLmFwayxub25l"
-target="_blank">
-
-🎬 PUTAR FILM
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 ZENNV MOVIE — DEV ZENNV 😈🔥
-</footer>
-
+        // Menutup menu jika user mengklik area lain di luar foto profil
+        window.onclick = function(event) {
+            if (!event.target.matches('.avatar-click')) {
+                const dropdowns = document.getElementsByClassName("profile-menu-card");
+                for (let i = 0; i < dropdowns.length; i++) {
+                    let openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show-menu')) {
+                        openDropdown.classList.remove('show-menu');
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
